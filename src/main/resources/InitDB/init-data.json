@@ -1,0 +1,72 @@
+
+{
+  "databaseChangeLog": [
+    {
+      "changeSet": {
+        "id": "loadData",
+        "author": "hector",
+         "changes": [
+          {
+        "loadData": {
+          "encoding": "UTF-8",
+          "file": "studios.csv",
+          "relativeToChangelogFile": "true",
+          "separator": ",",
+          "tableName": "studio",
+          "columns": [
+            {
+              "column": {
+                "name": "reference",
+                "type": "STRING"
+              },
+              "column": {
+                "name": "name",
+                "type": "STRING"
+              },
+              "column": {
+                "name": "payment",
+                "type": "NUMERIC"
+              }
+            }]
+        }
+        
+      },
+        {
+        "loadData": {
+          "encoding": "UTF-8",
+          "file": "episodes.csv",
+          "relativeToChangelogFile": "true",
+          "separator": ",",
+          "tableName": "episode",
+          "columns": [
+            {
+              "column": {
+                "name": "reference",
+                "type": "STRING"
+              },
+              "column": {
+                "name": "name",
+                "type": "STRING"
+              },
+              "column": {
+                "name": "rightsowner",
+                "type": "STRING"
+              }
+            }]
+        }
+        
+      }],
+     
+        "rollback": {
+          "sqlFile": {
+            "encoding": "utf8",
+            "path": "deleteData-rollback.sql",
+            "relativeToChangelogFile": true,
+            "splitStatements": true,
+            "stripComments": true
+          }
+        }
+    }
+}
+  ]
+}

@@ -1,0 +1,9 @@
+databaseChangeLog:
+# Init Schema
+- include:
+    file: "InitDB/init-schema.json"
+    relativeToChangelogFile: true
+# Load Data
+- include:
+    file: "InitDB/init-data.json"
+    relativeToChangelogFile: true

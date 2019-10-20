@@ -1,0 +1,30 @@
+{
+  "databaseChangeLog": [
+    {
+      "changeSet": {
+        "id": "init-schema",
+        "author": "hector",
+        "changes": [
+          {
+            "sqlFile": {
+              "encoding": "utf8",
+              "path": "createSchema-changes.sql",
+              "relativeToChangelogFile": true,
+              "splitStatements": true,
+              "stripComments": true
+            }
+          }
+        ],
+        "rollback": {
+          "sqlFile": {
+            "encoding": "utf8",
+            "path": "createSchema-rollback.sql",
+            "relativeToChangelogFile": true,
+            "splitStatements": true,
+            "stripComments": true
+          }
+        }
+      }
+    }
+  ]
+}

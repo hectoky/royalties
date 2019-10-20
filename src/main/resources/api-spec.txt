@@ -1,0 +1,67 @@
+POST /royaltymanager/reset
+
+No req body
+
+No validation
+
+Response
+
+HTTP 202 with empty body
+
+----
+
+POST /royaltymanager/viewing
+
+Req Body
+
+{ 
+  "episode": "GUID",
+  "customer": "GUID"
+}
+  
+Validation
+  
+  episode GUID mandatory and must exist in system
+  customer GUID mandatory, no further validation
+  
+Response
+
+HTTP 202 with empty body
+
+----
+
+GET /royaltymanager/payments
+
+Response
+
+HTTP 200
+
+Response Body
+
+{ [
+	{
+	  "rightsownerId": "GUID",
+	  "rightsowner": "Name"
+	  "royalty:" Value in GBP£ e.g 15000.23,
+	  "viewings": number of viewings
+	},
+	...
+] }
+
+----
+
+GET /royaltymanager/payments/{Rights Owner GUID}
+
+Response
+
+HTTP 200
+
+Response Body
+
+	{
+	  "rightsowner: "Name",
+	  "royalty": Value in £ e.g 15000.23,
+	  "viewings": number of viewings
+	}
+	
+No GUID validation, return 404 on GUID not found.
